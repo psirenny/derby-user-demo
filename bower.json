@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "psirenny <djtorres0@gmail.com>"
+  ],
+  "dependencies": {
+    "bootstrap": "*"
+  },
+  "keywords": [
+    "derby",
+    "user"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "license": "MIT",
+  "name": "derby-user-sample",
+  "private": true,
+  "version": "0.0.0"
+}
