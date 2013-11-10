@@ -1,10 +1,10 @@
 <Title:>
-  Sign up
+  Settings
 
 <Body:>
   <div class="container">
     <div class="page-header">
-      <h1>Sign up</h1>
+      <h1>Settings</h1>
     </div>
     {#with _page.form}
     <form role="form">
@@ -12,16 +12,17 @@
         <label for="username">Username</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user"></i></span>
-          <input id="username" class="form-control" placeholder="Username" type="text">
+          <input id="username" class="form-control" placeholder="Username" type="text" value="{.username}">
         </div>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input id="email" class="form-control" placeholder="Email" type="email">
+          <input id="email" class="form-control" placeholder="Email" type="email" value="{.email}">
         </div>
       </div>
+      <hr>
       <div class="form-group">
         <label for="password">Password</label>
         <div class="input-group">
@@ -29,18 +30,13 @@
           <input id="password" class="form-control" placeholder="Password" type="password">
         </div>
       </div>
-      <button class="btn btn-primary" type="submit">Sign up</button>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm password</label>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+          <input id="confirmPassword" class="form-control" placeholder="Confirm password" type="password">
+        </div>
+      </div>
     </form>
     {/}
-    <hr>
-    <p class="lead">Or sign up using…</p>
-    <button class="btn btn-default" type="button">
-      <i class="fa fa-facebook-square"></i> Facebook
-    </button>&nbsp;
-    <button class="btn btn-default" type="button">
-      <i class="fa fa-google-plus-square"></i> Google+
-    </button>&nbsp;
-    <button class="btn btn-default" type="button">
-      <i class="fa fa-twitter-square"></i> Twitter
-    </button>
   </div>

@@ -6,6 +6,7 @@
     <div class="page-header">
       <h1>Sign in</h1>
     </div>
+    {#with _page.form}
     <form role="form">
       <div class="form-group">
         <label for="usernameOrEmail">Username or email</label>
@@ -28,6 +29,7 @@
         <a href="/forgot">Forgot your password?</a>
       </div>
     </form>
+    {/}
     <hr>
     <p class="lead">Or sign in using…</p>
     <button class="btn btn-default" type="button">
