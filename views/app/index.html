@@ -1,4 +1,5 @@
 <import: src="./home">
+<import: src="./forgot">
 <import: src="./signin">
 <import: src="./signup">
 
@@ -19,13 +20,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">derby-user</a>
+        <a class="navbar-brand" href="/">Derby User</a>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <app:navitem href="/" title="Home">
           <app:navitem href="/signup" title="Sign up">
           <app:navitem href="/signin" title="Sign in">
+          <app:navitem href="/forgot" title="Reset">
         </ul>
         <form class="navbar-form navbar-right">
           <div class="form-group">
@@ -34,7 +36,14 @@
           <div class="form-group">
             <input class="form-control" placeholder="Password" type="password">
           </div>&nbsp;
-          <button class="btn btn-success" type="submit">Sign in</button>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Sign in</button>&nbsp;
+            <div class="btn-group">
+              <a class="btn btn-primary" href="/"><i class="fa fa-facebook"></i></a>
+              <a class="btn btn-primary" href="/"><i class="fa fa-google-plus"></i></a>
+              <a class="btn btn-primary" href="/"><i class="fa fa-twitter"></i></a>
+            </div>
+          </div>
         </form>
       </div>
     </div>

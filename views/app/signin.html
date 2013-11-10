@@ -3,8 +3,10 @@
 
 <Body:>
   <div class="container">
-    <form role="form">
+    <div class="page-header">
       <h1>Sign in</h1>
+    </div>
+    <form role="form">
       <div class="form-group">
         <label for="usernameOrEmail">Username or email</label>
         <div class="input-group">
@@ -19,8 +21,22 @@
           <input id="password" class="form-control" placeholder="Password" type="password">
         </div>
       </div>
-      <button class="btn btn-primary" type="submit">
-        <i class="fa fa-sign-in"></i> Sign in
-      </button>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+          <i class="fa fa-sign-in"></i> Sign in
+        </button>&nbsp;
+        <a href="/forgot">Forgot your password?</a>
+      </div>
     </form>
+    <hr>
+    <p class="lead">Other sign in using</p>
+    <button class="btn btn-default" type="button">
+      <i class="fa fa-facebook-square"></i> Facebook
+    </button>&nbsp;
+    <button class="btn btn-default" type="button">
+      <i class="fa fa-google-plus-square"></i> Google+
+    </button>&nbsp;
+    <button class="btn btn-default" type="button">
+      <i class="fa fa-twitter-square"></i> Twitter
+    </button>
   </div>

@@ -3,7 +3,8 @@
     "psirenny <djtorres0@gmail.com>"
   ],
   "dependencies": {
-    "bootstrap": "*"
+    "bootstrap": "*",
+    "font-awesome": "*"
   },
   "keywords": [
     "derby",
