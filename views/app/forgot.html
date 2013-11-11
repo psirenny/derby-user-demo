@@ -7,7 +7,7 @@
       <h1>Forgot your password?</h1>
     </div>
     {#with _page.form}
-    <form role="form">
+    <form role="form" x-bind="submit: user.forgot">
       <div class="form-group">
         <label for="usernameOrEmail">Username or email</label>
         <div class="input-group">
