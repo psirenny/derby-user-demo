@@ -1,7 +1,6 @@
 <import: src="./403">
 <import: src="./404">
 <import: src="./500">
-<import: src="./change">
 <import: src="./home">
 <import: src="./forgot">
 <import: src="./settings">
@@ -34,7 +33,6 @@
           <app:navitem href="/" title="Home">
           {#if _page.user.public.isRegistered}
           <app:navitem href="/settings" title="Settings">
-          <app:navitem href="/change" title="Change">
           <li><a x-bind="click: user.signout">Sign out</a></li>
           {else}
           <app:navitem href="/signup" title="Sign up">
@@ -48,7 +46,6 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"></i> {_page.user.public.local.username} <i class="fa fa-caret-down"></i></a>
             <ul class="dropdown-menu">
               <li><a href="/settings">Settings</a></li>
-              <li><a href="/change">Change password</a></li>
               <li class="divider"></li>
               <li><a x-bind="click: user.signout"><i class="fa fa-sign-out"></i> Sign out</a></li>
             </ul>
