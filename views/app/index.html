@@ -52,12 +52,13 @@
           </li>
         </ul>
         {else}
-        <form class="navbar-form navbar-right">
+        {#with _page.form.signIn}
+        <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           <div class="form-group">
-            <input class="form-control" placeholder="Username or email" type="text">
+            <input class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
           </div>&nbsp;
           <div class="form-group">
-            <input class="form-control" placeholder="Password" type="password">
+            <input class="form-control" placeholder="Password" type="password" value="{.password}">
           </div>&nbsp;
           <div class="form-group">
             <button class="btn btn-primary" type="submit">Sign in</button>&nbsp;
@@ -68,6 +69,7 @@
             </div>
           </div>
         </form>
+        {/}
         {/}
       </div>
     </div>
