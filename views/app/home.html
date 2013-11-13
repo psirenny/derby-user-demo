@@ -6,6 +6,9 @@
     <div class="container">
       <h1><i class="fa fa-user"></i> Derby User</h1>
       <p>A user management system for <a href="http://derbyjs.com">Derby JS</a>.</p>
-      <p><a class="btn btn-primary btn-lg" role="button" href="{{$config.repository.url}}"><i class="fa fa-github"></i> View on GitHub</a></p>
+      <p><a class="btn btn-primary btn-lg" role="button" href="{{github.url($config.repository.url)}}"><i class="fa fa-github"></i> View on GitHub</a></p>
+      <iframe src="http://ghbtns.com/github-btn.html?user={{github.user($config.repository.url)}}&repo={{github.repo($config.repository.url)}}&type=watch&count=true" allowtransparency="true" frameborder="0" height="20" scrolling="0" width="90"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user={{github.user($config.repository.url)}}&repo={{github.repo($config.repository.url)}}&type=fork&count=true" allowtransparency="true" frameborder="0" height="20" scrolling="0" width="90"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user={{github.user($config.repository.url)}}&type=follow&count=true" allowtransparency="true" frameborder="0" height="20" scrolling="0" width="180"></iframe>
     </div>
   </div>
