@@ -1,11 +1,10 @@
 var config = {
-  filename: __filename
-, styles: '../styles/ui'
-, scripts: {
+  filename: __filename,
+  scripts: {
     connectionAlert: require('./connectionAlert')
   }
 };
 
-module.exports = function(app, options) {
+module.exports = function (app, options) {
   app.createLibrary(config, options);
 };
