@@ -4,12 +4,15 @@
     "connect-mongo": "~0.3.2",
     "convict": "*",
     "derby": "0.5.x",
+    "derby-ui-github-buttons": "*",
     "derby-user": "*",
     "derby-user-providers": "*",
     "express": "~3.2.5",
     "livedb-mongo": "~0.2.0",
+    "nodemailer": "*",
     "racer-browserchannel": "~0.1.0",
-    "redis": "~0.8.3"
+    "redis": "~0.8.3",
+    "swig-email-templates": "*"
   },
   "description": "",
   "engines": {
