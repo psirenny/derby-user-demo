@@ -11,6 +11,7 @@
     "livedb-mongo": "~0.2.0",
     "nodemailer": "*",
     "racer-browserchannel": "~0.1.0",
+    "racer-hooks": "*",
     "redis": "~0.8.3",
     "swig-email-templates": "*"
   },

@@ -1,5 +1,6 @@
 *.log
 bower_components
+data
 node_modules
 phonegap/merges
 phonegap/platforms
