@@ -6,6 +6,7 @@
     "derby": "0.5.x",
     "derby-ui-github-buttons": "*",
     "derby-user": "*",
+    "derby-user-gravatar": "*",
     "derby-user-providers": "*",
     "express": "~3.2.5",
     "livedb-mongo": "~0.2.0",
