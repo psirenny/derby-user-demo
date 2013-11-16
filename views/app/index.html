@@ -63,12 +63,12 @@
         {#with _page.form.signIn}
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           <div class="form-group">
-            <label class="sr-only">Username or email</label>
-            <input class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
+            <label class="sr-only" for="usernameOrEmail">Username or email</label>
+            <input id="usernameOrEmail" class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
           </div>&nbsp;
           <div class="form-group">
-            <label class="sr-only">Password</label>
-            <input class="form-control" placeholder="Password" type="password" value="{.password}">
+            <label class="sr-only" for="password">Password</label>
+            <input id="password" class="form-control" placeholder="Password" type="password" value="{.password}">
           </div>&nbsp;
           <div class="form-group">
             <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>&nbsp;
