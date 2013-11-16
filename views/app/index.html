@@ -10,6 +10,7 @@
 <Scripts:>
   <script src="shared/bower_components/jquery/jquery.min.js"></script>
   <script src="shared/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="shared/bower_components/lgtm/dist/lgtm-standalone.js"></script>
 
 <Header:>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,9 +63,11 @@
         {#with _page.form.signIn}
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           <div class="form-group">
+            <label class="sr-only">Username or email</label>
             <input class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
           </div>&nbsp;
           <div class="form-group">
+            <label class="sr-only">Password</label>
             <input class="form-control" placeholder="Password" type="password" value="{.password}">
           </div>&nbsp;
           <div class="form-group">
