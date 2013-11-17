@@ -7,7 +7,7 @@
       {else}
       {sentenceCase($connection.state)} –&sp;
       {#if :self.hideReconnect}
-      <i class="fa fa-spin fa-refresh"></i> Reconnecting…
+      <i class="fa fa-refresh fa-spin"></i> Reconnecting…
       {else}
       <a x-bind="click: reconnect"><i class="fa fa-refresh"></i> Reconnect</a>
       {/}
