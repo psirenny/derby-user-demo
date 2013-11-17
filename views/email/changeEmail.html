@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+<table class="container">
+  <tr>
+    <td>
+      <table class="row">
+        <tr>
+          <td class="wrapper last">
+            <table class="twelve columns">
+              <tr>
+                <td>
+                  <h3>Hi, {{ username }}</h3>
+                  <p>Please confirm your new email address <a href="{{ origin }}/user/confirmEmail/{{ token }}">by clicking here</a>.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+{% endblock %}

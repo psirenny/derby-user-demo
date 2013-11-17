@@ -3,20 +3,21 @@
 <import: src="./500">
 <import: src="./home">
 <import: src="./forgot">
+<import: src="./reset">
 <import: src="./settings">
 <import: src="./signin">
 <import: src="./signup">
 
 <Scripts:>
-  <script src="shared/bower_components/jquery/jquery.min.js"></script>
-  <script src="shared/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="shared/bower_components/lgtm/dist/lgtm-standalone.js"></script>
+  <script src="/shared/bower_components/jquery/jquery.min.js"></script>
+  <script src="/shared/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/shared/bower_components/lgtm/dist/lgtm-standalone.js"></script>
 
 <Header:>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="shared/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="shared/bower_components/bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
-  <link href="shared/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/shared/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/shared/bower_components/bootstrap/examples/jumbotron/jumbotron.css" rel="stylesheet">
+  <link href="/shared/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <ui:connectionAlert>
   <header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -38,7 +39,7 @@
           {else}
           <app:navitem href="/signup" title="Sign up">
           <app:navitem href="/signin" title="Sign in">
-          <app:navitem href="/forgot" title="Reset">
+          <app:navitem href="/forgot" title="Forgot">
           {/}
         </ul>
         {#if _page.user.public.isRegistered}
@@ -63,12 +64,12 @@
         {#with _page.form.navbar}
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           <div class="form-group">
-            <label class="sr-only" for="usernameOrEmail">Username or email</label>
-            <input id="usernameOrEmail" class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
+            <label class="sr-only" for="navUsernameOrEmail">Username or email</label>
+            <input id="navUsernameOrEmail" class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
           </div>&nbsp;
           <div class="form-group">
-            <label class="sr-only" for="password">Password</label>
-            <input id="password" class="form-control" placeholder="Password" type="password" value="{.password}">
+            <label class="sr-only" for="navPassword">Password</label>
+            <input id="navPassword" class="form-control" placeholder="Password" type="password" value="{.password}">
           </div>&nbsp;
           <div class="form-group">
             <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>&nbsp;
@@ -84,6 +85,25 @@
       </div>
     </div>
   </header>
+  {#if _page.user.public.isRegistered}
+  {#unless _page.user.private.local.emails.0.value}
+  <div class="container">
+    <div class="alert alert-warning">
+      <p><a href="/settings">Please set your email address</a>.</p>
+    </div>
+  </div>
+  {/}
+  {#unless _page.user.private.local.emails.0.verified}
+  <div class="container">
+    <div class="alert alert-warning">
+      <p>Please confirm your email address. A confirmation message was sent to <strong>{_page.user.private.local.emails.0.value}</strong>.</p>
+      {#with _page.form.verifyEmail}
+      <p><a class="btn btn-default" x-bind="click: user.verifyEmail"><i class="fa fa-repeat"></i> Resend confirmation</a> <a href="/settings">Update email address</a>.</p>
+      {/}
+    </div>
+  </div>
+  {/}
+  {/}
 
 <Footer:>
   <hr>

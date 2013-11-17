@@ -6,7 +6,7 @@
     <div class="page-header">
       <h1>Settings</h1>
     </div>
-    {#with _page.form.changeUsername}
+    {#with _page.form.username}
     <form role="form" x-bind="submit: user.changeUsername">
       <legend>Change username</legend>
       <div class="form-group">
@@ -21,7 +21,7 @@
       </div>
     </form>
     {/}
-    {#with _page.form.changeEmail}
+    {#with _page.form.email}
     <form role="form" x-bind="submit: user.changeEmail">
       <legend>Change email</legend>
       <div class="form-group">
@@ -37,7 +37,7 @@
       </div>
     </form>
     {/}
-    {#with _page.form.changePassword}
+    {#with _page.form.password}
     <form role="form" x-bind="submit: user.changePassword">
       <legend>Change password</legend>
       <div class="form-group">
