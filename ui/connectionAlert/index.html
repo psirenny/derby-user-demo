@@ -5,9 +5,11 @@
       {#if equal($connection.state, 'stopped')}
       Unable to reconnect – <a x-bind="click: reload"><i class="fa fa-refresh"></i> Reload</a>
       {else}
-      <span>{sentenceCase($connection.state)}</span>
-      {#unless :self.hideReconnect}
-      <span>&sp;– <a x-bind="click: reconnect"><i class="fa fa-refresh"></i> Reconnect</a></span>
+      {sentenceCase($connection.state)} –&sp;
+      {#if :self.hideReconnect}
+      <i class="fa fa-spin fa-refresh"></i> Reconnecting…
+      {else}
+      <a x-bind="click: reconnect"><i class="fa fa-refresh"></i> Reconnect</a>
       {/}
       {/}
     </div>
