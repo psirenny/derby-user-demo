@@ -86,20 +86,19 @@
     </div>
   </header>
   {#if _page.user.public.isRegistered}
-  {#unless _page.user.private.local.emails.0.value}
-  <div class="container">
-    <div class="alert alert-warning">
-      <p><a href="/settings">Please set your email address</a>.</p>
-    </div>
-  </div>
-  {/}
-  {#unless _page.user.private.local.emails.0.verified}
+  {#if _page.user.private.local.emails.0.value}
   <div class="container">
     <div class="alert alert-warning">
       <p>Please confirm your email address. A confirmation message was sent to <strong>{_page.user.private.local.emails.0.value}</strong>.</p>
       {#with _page.form.verifyEmail}
       <p><a class="btn btn-default" x-bind="click: user.verifyEmail"><i class="fa fa-repeat"></i> Resend confirmation</a> <a href="/settings">Update email address</a>.</p>
       {/}
+    </div>
+  </div>
+  {else if not(_page.user.private.local.emails.0.verified)}
+  <div class="container">
+    <div class="alert alert-warning">
+      <p><i class="fa fa-exclamation-circle"></i> <a href="/settings">Please set your email address</a>.</p>
     </div>
   </div>
   {/}
