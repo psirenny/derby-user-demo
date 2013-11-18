@@ -11,7 +11,7 @@
 <Scripts:>
   <script src="/shared/bower_components/jquery/jquery.min.js"></script>
   <script src="/shared/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="/shared/bower_components/lgtm/dist/lgtm-standalone.js"></script>
+  <script src="/shared/bower_components/jquery-popupwindow/jquery.popupwindow.js"></script>
 
 <Header:>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,9 +74,9 @@
           <div class="form-group">
             <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>&nbsp;
             <div class="btn-group">
-              <a class="btn btn-primary" href="/user/auth/facebook"><i class="fa fa-facebook"></i></a>
-              <a class="btn btn-primary" href="/user/auth/google"><i class="fa fa-google-plus"></i></a>
-              <a class="btn btn-primary" href="/user/auth/twitter"><i class="fa fa-twitter"></i></a>
+              <a class="btn btn-primary" x-bind="click: user.connect.facebook"><i class="fa fa-facebook"></i></a>
+              <a class="btn btn-primary" x-bind="click: user.connect.google"><i class="fa fa-google-plus"></i></a>
+              <a class="btn btn-primary" x-bind="click: user.connect.twitter"><i class="fa fa-twitter"></i></a>
             </div>
           </div>
         </form>

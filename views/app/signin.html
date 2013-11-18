@@ -33,24 +33,24 @@
     <hr>
     <p class="lead">Or sign up using…</p>
     <div class="visible-xs">
-      <a class="btn btn-default" href="/user/auth/facebook">
+      <a class="btn btn-default" x-bind="click: user.connect.facebook">
         <i class="fa fa-facebook fa-lg"></i>
       </a>&sp;
-      <a class="btn btn-default" href="/user/auth/google">
+      <a class="btn btn-default" x-bind="click: user.connect.google">
         <i class="fa fa-google-plus fa-lg"></i>
       </a>&sp;
-      <a class="btn btn-default" href="/user/auth/twitter">
+      <a class="btn btn-default" x-bind="click: user.connect.twitter">
         <i class="fa fa-twitter fa-lg"></i>
       </a>
     </div>
     <div class="hidden-xs">
-      <a class="btn btn-default" href="/user/auth/facebook">
+      <a class="btn btn-default" x-bind="click: user.connect.facebook">
         <i class="fa fa-facebook-square"></i> Facebook
       </a>&sp;
-      <a class="btn btn-default" href="/user/auth/google">
+      <a class="btn btn-default" x-bind="click: user.connect.google">
         <i class="fa fa-google-plus-square"></i> Google+
       </a>&sp;
-      <a class="btn btn-default" href="/user/auth/twitter">
+      <a class="btn btn-default" x-bind="click: user.connect.twitter">
         <i class="fa fa-twitter-square"></i> Twitter
       </a>
     </div>
