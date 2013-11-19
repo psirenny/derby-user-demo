@@ -19,7 +19,7 @@
     "tests"
   ],
   "license": "MIT",
-  "name": "derby-user-sample",
+  "name": "derby-user-demo",
   "private": true,
   "version": "0.0.0"
 }

@@ -24,11 +24,11 @@
   "engines": {
     "node": "0.10.x"
   },
-  "name": "derby-user-sample",
+  "name": "derby-user-demo",
   "private": true,
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/psirenny/derby-user-sample.git"
+    "url" : "https://github.com/psirenny/derby-user-demo.git"
   },
   "version": "0.0.0",
   "scripts": {
