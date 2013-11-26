@@ -4,6 +4,7 @@
   ],
   "dependencies": {
     "bootstrap": "*",
+    "fastclick": "*",
     "font-awesome": "*",
     "jquery-popupwindow": "*"
   },
