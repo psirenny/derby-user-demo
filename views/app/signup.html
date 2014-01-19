@@ -6,29 +6,35 @@
     <div class="page-header">
       <h1>Sign up</h1>
     </div>
-    {#with _page.form}
+    {#with _page.form.signup}
     <form role="form" x-bind="submit: user.signup">
-      <div class="form-group">
-        <label class="control-label" for="username">Username</label>
+      {#with .username}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.username)}{else}Username{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user"></i></span>
-          <input id="username" class="form-control" autofocus placeholder="Username" type="text" value="{.username}">
+          <input id="username" class="form-control" autofocus name="username" placeholder="Username" spellcheck="false" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label" for="email">Email</label>
+      {/}
+      {#with .email}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.email)}{else}Email{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input id="email" class="form-control" placeholder="Email" type="email" value="{.email}">
+          <input id="email" class="form-control" name="email" placeholder="Email" type="email" value="{.value}" x-bind="blur: $validate.form.event">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label" for="password">Password</label>
+      {/}
+      {#with .password}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.password)}{else}Password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="password" class="form-control" placeholder="Password" type="password" value="{.password}">
+          <input id="password" class="form-control" name="password" placeholder="Password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
+      {/}
       <button class="btn btn-primary" type="submit">Sign up</button>
     </form>
     {/}

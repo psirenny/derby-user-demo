@@ -6,6 +6,7 @@
     "bootstrap": "*",
     "fastclick": "*",
     "font-awesome": "*",
+    "jquery": "*",
     "jquery-popupwindow": "*"
   },
   "keywords": [

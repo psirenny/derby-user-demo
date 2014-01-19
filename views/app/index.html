@@ -11,6 +11,7 @@
 <Scripts:>
   <script src="/shared/bower_components/jquery/jquery.min.js"></script>
   <script src="/shared/bower_components/jquery-popupwindow/jquery.popupwindow.js"></script>
+  <script src="/shared/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/shared/bower_components/fastclick/lib/fastclick.js"></script>
   <script>$(function(){FastClick.attach(document.body);});</script>
 
@@ -19,7 +20,7 @@
   <link href="/shared/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/shared/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <ui:connectionAlert>
-  <header class="navbar navbar-inverse" role="navigation">
+  <header class="navbar navbar-static-top navbar-inverse" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -65,7 +66,7 @@
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           <div class="form-group">
             <label class="sr-only" for="navUsernameOrEmail">Username or email</label>
-            <input id="navUsernameOrEmail" class="form-control" placeholder="Username or email" type="text" value="{.usernameOrEmail}">
+            <input id="navUsernameOrEmail" class="form-control" placeholder="Username or email" spellcheck="false" type="text" value="{.usernameOrEmail}">
           </div>&nbsp;
           <div class="form-group">
             <label class="sr-only" for="navPassword">Password</label>

@@ -5,12 +5,16 @@
     "connect-mongo": "~0.3.2",
     "convict": "*",
     "derby": "0.5.x",
+    "derby-lang": "*",
     "derby-ui-github-buttons": "*",
     "derby-user": "*",
     "derby-user-gravatar": "*",
     "derby-user-providers": "*",
+    "derby-validate-user": "*",
+    "derby-validate-user-lang": "*",
+    "derby-validate": "*",
     "express": "~3.2.5",
-    "livedb-mongo": "~0.2.0",
+    "livedb-mongo": "~0.3.0",
     "nodemailer": "*",
     "passport-facebook": "*",
     "passport-google-oauth": "*",
@@ -20,7 +24,7 @@
     "redis": "~0.8.3",
     "swig-email-templates": "*"
   },
-  "description": "",
+  "description": "Demo site for Derby User.",
   "engines": {
     "node": "0.10.x"
   },
