@@ -6,7 +6,7 @@
     <div class="page-header">
       <h1>Sign up</h1>
     </div>
-    {#with _page.form.signup}
+    {#with _page.form}
     <form role="form" x-bind="submit: user.signup">
       {#with .username}
       <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
@@ -22,7 +22,7 @@
         <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.email)}{else}Email{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input id="email" class="form-control" name="email" placeholder="Email" type="email" value="{.value}" x-bind="blur: $validate.form.event">
+          <input id="email" class="form-control" name="email" placeholder="Email" type="email" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
       {/}

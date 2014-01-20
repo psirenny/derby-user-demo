@@ -64,14 +64,18 @@
         {else}
         {#with _page.form.navbar}
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
+          {#with .usernameOrEmail}
           <div class="form-group">
             <label class="sr-only" for="navUsernameOrEmail">Username or email</label>
-            <input id="navUsernameOrEmail" class="form-control" placeholder="Username or email" spellcheck="false" type="text" value="{.usernameOrEmail}">
+            <input id="navUsernameOrEmail" class="form-control" placeholder="Username or email" spellcheck="false" type="text" value="{.value}">
           </div>&nbsp;
+          {/}
+          {#with .password}
           <div class="form-group">
             <label class="sr-only" for="navPassword">Password</label>
-            <input id="navPassword" class="form-control" placeholder="Password" type="password" value="{.password}">
+            <input id="navPassword" class="form-control" placeholder="Password" type="password" value="{.value}">
           </div>&nbsp;
+          {/}
           <div class="form-group">
             <button class="btn btn-primary" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>&nbsp;
             <div class="btn-group">

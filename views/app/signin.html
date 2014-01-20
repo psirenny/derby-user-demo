@@ -8,20 +8,24 @@
     </div>
     {#with _page.form}
     <form role="form" x-bind="submit: user.signin">
-      <div class="form-group">
-        <label class="control-label" for="usernameOrEmail">Username or email</label>
+      {#with .usernameOrEmail}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="usernameOrEmail">{#with .messages}{#if .0}{t(.)}{else}Username or email{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user"></i></span>
-          <input id="usernameOrEmail" class="form-control" autofocus placeholder="Username or email" spellcheck="false" type="text" value="{.usernameOrEmail}">
+          <input id="usernameOrEmail" class="form-control" autofocus placeholder="Username or email" spellcheck="false" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label" for="password">Password</label>
+      {/}
+      {#with .password}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="password">{#with .messages}{#if .0}{t(.)}{else}Password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="password" class="form-control" placeholder="Password" type="password" value="{.password}">
+          <input id="password" class="form-control" placeholder="Password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
+      {/}
       <div class="form-group">
         <button class="btn btn-primary" type="submit">
           <i class="fa fa-sign-in"></i> Sign in
