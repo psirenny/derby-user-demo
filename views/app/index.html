@@ -62,7 +62,7 @@
           </li>
         </ul>
         {else}
-        {#with _page.form.navbar}
+        {#with _page.navbarForm}
         <form class="navbar-form navbar-right" x-bind="submit: user.signin">
           {#with .usernameOrEmail}
           <div class="form-group">

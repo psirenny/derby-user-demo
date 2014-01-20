@@ -6,54 +6,62 @@
     <div class="page-header">
       <h1>Settings</h1>
     </div>
-    {#with _page.form.username}
+    {#with _page.form.changeUsername}
     <form role="form" x-bind="submit: user.changeUsername">
       <legend>Change username</legend>
-      <div class="form-group">
-        <label class="control-label" for="username">Username</label>
+      {#with .username}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.username)}{else}Username{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user"></i></span>
-          <input id="username" class="form-control" placeholder="Username" type="text" value="{.username}">
+          <input id="username" class="form-control" placeholder="Username" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
+      {/}
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Change</button>
       </div>
     </form>
     {/}
-    {#with _page.form.email}
+    {#with _page.form.changeEmail}
     <form role="form" x-bind="submit: user.changeEmail">
       <legend>Change email</legend>
-      <div class="form-group">
-        <label class="control-label" for="email">Email</label>
+      {#with .email}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.email)}{else}Email{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input id="email" class="form-control" placeholder="Email" type="text" value="{.email}">
+          <input id="email" class="form-control" placeholder="Email" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
         <p class="help-block">Change your avatar at <i class="fa fa-external-link-square"></i> <a href="http://www.gravatar.com">Gravatar.com</a>.</p>
       </div>
+      {/}
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Change</button>
       </div>
     </form>
     {/}
-    {#with _page.form.password}
+    {#with _page.form.changePassword}
     <form role="form" x-bind="submit: user.changePassword">
       <legend>Change password</legend>
-      <div class="form-group">
-        <label class="control-label" for="password">Password</label>
+      {#with .password}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(.)}{else}Confirm password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="password" class="form-control" placeholder="Password" type="password" value="{.password}">
+          <input id="password" class="form-control" placeholder="Password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label" for="confirmPassword">Confirm password</label>
+      {/}
+      {#with .confirmPassword}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(.)}{else}Confirm password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="confirmPassword" class="form-control" placeholder="Confirm password" type="password" value="{.confirmPassword}">
+          <input id="confirmPassword" class="form-control" placeholder="Confirm password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
+      {/}
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Change</button>
       </div>

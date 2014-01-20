@@ -8,20 +8,24 @@
     </div>
     {#with _page.form}
     <form role="form" x-bind="submit: user.resetPassword">
-      <div class="form-group">
-        <label class="control-label" for="password">Password</label>
+      {#with .password}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.password)}{else}Password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="password" class="form-control" autofocus placeholder="Password" type="password" value="{.password}">
+          <input id="password" class="form-control" autofocus placeholder="Password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label" for="confirmPassword">Confirm password</label>
+      {/}
+      {#with .confirmPassword}
+      <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(.)}{else}Confirm password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
-          <input id="confirmPassword" class="form-control" placeholder="Confirm password" type="password" value="{.confirmPassword}">
+          <input id="confirmPassword" class="form-control" placeholder="Confirm password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
         </div>
       </div>
+      {/}
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Reset</button>
       </div>
