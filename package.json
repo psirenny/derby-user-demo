@@ -7,6 +7,7 @@
     "derby": "0.5.x",
     "derby-lang": "*",
     "derby-ui-github-buttons": "*",
+    "derby-ui-photo-upload": "*",
     "derby-user": "*",
     "derby-user-gravatar": "*",
     "derby-user-providers": "*",
