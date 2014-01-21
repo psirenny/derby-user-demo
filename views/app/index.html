@@ -47,11 +47,7 @@
         <ul class="nav navbar-nav navbar-right dropdown">
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-              {#if user.photoUrl(_page.user.public)}
-              <img class="img-circle" alt="" height="20" src="{user.photoUrl(_page.user.public)}" width="20">
-              {else}
-              <i class="fa fa-user"></i>
-              {/}&nbsp;
+              <img class="img-circle" alt="" height="20" src="{user.photoUrl(_page.user.public)}" width="20">&sp;
               {user.displayName(_page.user.public)} <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu">

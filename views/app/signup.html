@@ -31,10 +31,11 @@
         <div class="form-group">
           <label class="control-label" for="photo">Photo</label>
           <div class="input-group">
-            <span class="input-group-addon">
-              <i class="fa fa-camera"></i>
-            </span>
+            <span class="input-group-addon"><i class="fa fa-camera"></i></span>
             <input id="photo" class="form-control" type="file">
+          </div>
+          <div class="help-block">
+            <img class="img-circle" height="40" src="{gravatar.imageUrl(_page.form.email.value)}" width="40" /> Current photo
           </div>
         </div>
       </photo:upload>
