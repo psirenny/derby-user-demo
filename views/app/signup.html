@@ -10,7 +10,7 @@
     <form role="form" x-bind="submit: user.signup">
       {#with .username}
       <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
-        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.username)}{else}Username{/}{/}</label>
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $user.schema.username)}{else}Username{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user"></i></span>
           <input id="username" class="form-control" autofocus name="username" placeholder="Username" spellcheck="false" type="text" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
@@ -19,7 +19,7 @@
       {/}
       {#with .email}
       <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
-        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.email)}{else}Email{/}{/}</label>
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $user.schema.email)}{else}Email{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
           <input id="email" class="form-control" name="email" placeholder="Email" type="email" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">
@@ -27,22 +27,39 @@
       </div>
       {/}
       {#with .photo}
-      <photo:upload>
-        <div class="form-group">
+      <photo:upload errors="{.errors}" image="{.image}" size="{$user.schema.photo.size}">
+        <div class="form-group" x-as="dropzone">
           <label class="control-label" for="photo">Photo</label>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-camera"></i></span>
-            <input id="photo" class="form-control" type="file">
+            <input id="photo" class="form-control" accept="image/*" type="file" value="{.value}" x-as="input">
           </div>
           <div class="help-block">
-            <img class="img-circle" height="40" src="{gravatar.imageUrl(_page.form.email.value)}" width="40" /> Current photo
+            {#if .image.object.src}
+            <div class="media">
+              <div class="pull-left img-circle" style="height:{$user.schema.photo.size}px;overflow:hidden;width:{$user.schema.photo.size}px;">
+                <img class="media-obj js-panzoom" alt="" src="{.}">
+              </div>
+              <div class="media-body">
+                <p class="media-heading">Adjust photo</p>
+                <i class="fa fa-search-minus"></i>&sp;
+                <i class="fa fa-search-plus"></i>&sp;
+                <button class="btn btn-default" type="button" x-bind="click: reset"><i class="fa fa-trash-o"></i> Reset</button>
+              </div>
+            </div>
+            {else}
+            <img class="img-circle" height="{$user.schema.photo.size}" src="{gravatar.imageUrl(_page.form.email.value)}" width="{$user.schema.photo.size}" /> Current photo
+            {/}&sp;
+            <img class="img-circle" alt="" src="{.image.edited.object.src}">
+            <img class="img-circle" src="{.otherImage.src}">&sp;
+            <input type="range" value=".5" x-as="zoom">
           </div>
         </div>
       </photo:upload>
       {/}
       {#with .password}
       <div class="form-group{#with .messages}{#if .0} has-error{/}{/}{#with .errors}{#unless .0} has-success{/}{/}">
-        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $validate.user.schema.password)}{else}Password{/}{/}</label>
+        <label class="control-label" for="username">{#with .messages}{#if .0}{t(., $user.schema.password)}{else}Password{/}{/}</label>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-key"></i></span>
           <input id="password" class="form-control" name="password" placeholder="Password" type="password" value="{.value}" x-bind="blur: $validate.form.event, keypress: $validate.form.event">

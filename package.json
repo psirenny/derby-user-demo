@@ -2,6 +2,7 @@
   "author": "psirenny <djtorres0@gmail.com>",
   "dependencies": {
     "bower": "*",
+    "cloudinary": "*",
     "connect-mongo": "~0.3.2",
     "convict": "*",
     "derby": "0.5.x",
