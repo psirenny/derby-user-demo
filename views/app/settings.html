@@ -41,6 +41,49 @@
       </div>
     </form>
     {/}
+    {#with _page.form.editPhoto}
+    <form role="form" x-bind="submit: user.photo.edit">
+      <photo:upload bind="create: photoUpload.create" errors="{.errors}" image="{.image}" loading="{.loading}" size="{$user.schema.photo.size}">
+        <div class="form-group" x-as="dropzone">
+          <label class="control-label" for="photo">Photo</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-camera"></i></span>
+            <input id="photo" class="form-control" accept="image/*" type="file" value="{.value}" x-as="input">
+          </div>
+          <p class="help-block">
+            <a class="{#unless .image.object}hidden{/}" href="#" x-as="edit">Edit your photo</a>
+            <span class="{#if .image.object}hidden{/}">Optional profile photo</span>
+          </p>
+          <div class="modal fade" aria-hidden="true" role="dialog" tabindex="-1" x-as="modal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Edit your photo</h4>
+                </div>
+                <div class="modal-body text-center">
+                  <div class="img-rounded" style="display:inline-block;height:{$user.schema.photo.size}px;overflow:hidden;width:{$user.schema.photo.size}px;">
+                    <img src="{.image.object.src}" x-as="image">
+                  </div>
+                  <div>
+                    <input class="{#unless .image.canScale}hidden{/}" type="range" x-as="scale">&sp;
+                    <p class="text-muted">Drag the image or zoom in and out.</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" x-as="reset">Reset</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </photo:upload>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+    {/}
     {#with _page.form.changePassword}
     <form role="form" x-bind="submit: user.changePassword">
       <legend>Change password</legend>
