@@ -7,8 +7,8 @@
     "fastclick": "*",
     "font-awesome": "*",
     "jquery": "*",
-    "jquery-popupwindow": "*",
-    "jquery.panzoom": "*"
+    "jquery.panzoom": "*",
+    "jquery-popupwindow": "*"
   },
   "keywords": [
     "derby",
