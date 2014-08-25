@@ -1,5 +1,5 @@
 {
-  "author": "psirenny <djtorres0@gmail.com>",
+  "author": "Dennis Torres <djtorres0@gmail.com>",
   "dependencies": {
     "bower": "*",
     "cloudinary": "*",
@@ -33,12 +33,11 @@
     "node": "0.10.x"
   },
   "name": "derby-user-demo",
-  "private": true,
   "repository": {
     "type" : "git",
     "url" : "https://github.com/psirenny/derby-user-demo.git"
   },
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
     "start": "node server.js",
